@@ -17,6 +17,7 @@
       </header>
       <main>
         <form method="POST">
+          {% csrf_token %}
           <div class="form-group mb-4">
             <label for="first_name">First Name:</label>
             <input
@@ -108,11 +109,11 @@
             </div>
           </div>
           <button class="btn btn-secondary mb-4" type="submit">Submit</button>
-          {% with messages = get_flashed_messages() %} {% if messages %}
+          {% if messages %}
           <div class="alert alert-success">
             {% for message in messages %} {{ message }} {% endfor %}
           </div>
-          {% endif %} {% endwith %}
+          {% endif %}
         </form>
       </main>
       <footer>
