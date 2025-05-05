@@ -28,3 +28,4 @@ def index(request):
             email_message.send()
 
     return render(request, "index.html")
+
